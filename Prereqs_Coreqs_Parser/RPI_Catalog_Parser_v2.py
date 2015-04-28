@@ -39,7 +39,7 @@ if __name__ == "__main__":
     current_class = "%s %s" %(class_[0],class_[1])
     print current_class
     
-    
+    '''
     precoflag = False
     precoreqs = ""
     for x in soup.h1.parent:
@@ -55,14 +55,13 @@ if __name__ == "__main__":
                 words = "%s%s" %(words,y)
         if ("Prerequisites/Corequisites" in y):
             precoflag = True    
-    '''
     
     #Cannot print " ......
     for x in soup.h1.parent:
         print x
         print "*********************************************"
     '''
-    '''
+    
     preco = []
     while (course_id<24158):
         
@@ -77,7 +76,7 @@ if __name__ == "__main__":
         class_id = "%s %s" %(class_name[0],class_name[1])
         precoflag = False
         
-        for x in soup.h1.parent:
+        for x in soup.h1.parent.strings:
             words = ""
             if (x == "\n"):
                 continue
@@ -87,13 +86,15 @@ if __name__ == "__main__":
                 break
             for y in x:
                 words = "%s%s" %(words,y)
-            if ("Prerequisites/Corequisites" in y):
+            if ("PrerequisitesCorequisites" in words):
                 precoflag = True        
-        #print class_id
-        #print precoreqs
+        print class_id
+        print precoreqs
         preco.append((class_id,precoreqs))
         course_id += 1
         
-    for x in preco:
-        print x
-    '''
+    #for x in preco:
+    #    print x
+    
+    #23735 blank page.............
+    #Need to allow for a blank page
