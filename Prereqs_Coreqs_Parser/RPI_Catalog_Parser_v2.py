@@ -28,7 +28,7 @@ if __name__ == "__main__":
     semester_id = 13
     course_id = 21969
     
-    
+    '''
     course_id = 23718
     url = "http://catalog.rpi.edu/preview_course_nopop.php?catoid=%d&coid=%d" %(semester_id,course_id)
     
@@ -39,7 +39,7 @@ if __name__ == "__main__":
     current_class = "%s %s" %(class_[0],class_[1])
     print current_class
     
-    '''
+    
     precoflag = False
     precoreqs = ""
     for x in soup.h1.parent:
