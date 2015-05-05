@@ -71,6 +71,10 @@ if __name__ == "__main__":
         
         s = requests.get(url)
         soup = BeautifulSoup(s.content)
+        if (soup.body == None):
+            coure_id += 1
+            continue
+        
         precoreqs = ""
         class_name = removeTags(soup.h1)
         class_id = "%s %s" %(class_name[0],class_name[1])
